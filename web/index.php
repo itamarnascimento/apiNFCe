@@ -1,7 +1,7 @@
 <?php
 
-//error_reporting(0);
-//ini_set("display_errors", 0);
+error_reporting(0);
+ini_set("display_errors", 0);
 header("Access-Control-Allow-Origin: *");
 header('Access-Control-Allow-Credentials: true');
 header('Access-Control-Allow-Headers: authorization');
@@ -14,8 +14,6 @@ empty($content) && die(json_encode(['error' => "Requisicao sem corpo"]));
 $content = get_object_vars(json_decode($content));
 
 $url = $content['url'];
-
-//$url = str_replace("/nfce/consulta", ":444/nfce/consulta", $url);
 
 $contentPagina = file_get_contents($url);
 

@@ -15,11 +15,7 @@ $content = get_object_vars(json_decode($content));
 
 $url = $content['url'];
 
-//$url = str_replace("/nfce/consulta", ":444/nfce/consulta", $url);
-
 $contentPagina = file_get_contents($url);
-
-
 $contentPaginaTeste = simplexml_load_string($contentPagina);
 
 $det = $contentPaginaTeste->proc->nfeProc->NFe->infNFe->det;
